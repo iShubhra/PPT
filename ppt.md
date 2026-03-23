@@ -63,7 +63,21 @@ Ask it to return the slide content as **JSON format** — this is important for 
 
 ---
 
-### Step 5 — Run the Python script to build the PPT
+### Step 5 — Validate the Python script using AI before running
+
+Before executing the script, paste it back into AI and ask:
+> *"Review this Python script. Check for any errors, missing imports, or formatting issues before I run it."*
+
+The AI will:
+- Catch any syntax or logic errors
+- Confirm the JSON structure matches what the script expects
+- Suggest fixes if something looks off
+
+This saves you from running a broken script and debugging it yourself.
+
+---
+
+### Step 6 — Run the Python script to build the PPT
 
 Take the JSON output from Step 4 and feed it into a simple Python script.
 
@@ -126,6 +140,31 @@ OUTPUT:
 | 50-slide deck | Very expensive | Same script, same speed |
 
 **Bottom line:** AI is used only once — for thinking and content. Python handles all the building and formatting. Any small changes can be done without touching AI at all.
+
+---
+
+---
+
+## (Advanced) Agentic AI — Let the AI Validate the Entire Flow
+
+This is an optional but powerful upgrade to the above steps.
+
+Instead of manually reviewing each step, you can instruct the AI to act as an **agent** — meaning it checks its own work before passing it to the next step.
+
+Add this instruction to your prompt:
+
+> *"Before generating the final output, validate each step: confirm the prompt is well-structured, confirm the JSON matches the expected format, and confirm the Python script has no errors. Only proceed if all three are correct."*
+
+**What this does:**
+- The AI reviews the prompt it generated — is it complete and clear?
+- The AI checks the JSON — do all slides have the required fields?
+- The AI validates the Python script — will it run without errors?
+- If anything is wrong, it fixes it **before** handing over the output
+
+**Why this matters:**
+You are not debugging. You are not re-prompting. The AI is responsible for making sure everything is correct end to end. You just review the final result.
+
+> Think of it as having a team member who double-checks their own work before sending it to you.
 
 ---
 
